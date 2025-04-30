@@ -230,7 +230,27 @@ Functions :
 								concat_ws(' ',Reg_FirstName , Reg_MiddleName , Reg_LastName) as FullName
 							from tbl_RegisterUser
 
-					replace
+					replace :
+						Replace function is used to replace char / word into the existing string.
+						This function replace all the char that we are going to replace.
+
+						-- Syntax :
+							Select replace(value,' old char/word','new char/word') 
+								from tbl_name
+
+						-- Example :
+							Select replace('Hello World','e','l') -- Hlllo World
+
+							Select replace('Hello World','l','e') -- Heeeo Wored
+
+							Select replace('Hello World','l','(Hello)') -- He  o Wor d
+															-- He(Hello)(Hello)o Wor(Hello)d
+
+							Select * from tbl_registeruser
+
+							Select replace(Reg_FirstName,Reg_FirstName,concat_ws(' ','Mr.',Reg_FirstName))
+							from tbl_registeruser
+
 					reverse					
 					substring
 					left
